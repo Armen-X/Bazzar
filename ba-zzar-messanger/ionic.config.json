@@ -1,5 +1,7 @@
 {
   "name": "BaZzar Messanger",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
