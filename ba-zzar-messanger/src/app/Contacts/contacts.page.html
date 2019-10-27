@@ -1,0 +1,22 @@
+<ion-header translucent="true" >
+  <ion-toolbar class="Top">     
+      <ion-input class="SearchTop" placeholder="Search contact...">
+       
+      </ion-input>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <ion-list class="list">
+    <ion-item    class="itemlist"  ion-item detail-none *ngFor="let contact of contacts"
+              [routerLink]="['./', contact.Id] " >
+      <ion-avatar class="contactpics" slot="start">
+        <ion-img [src]="contact.ImageUrl"></ion-img>
+      </ion-avatar>
+      <ion-label class="mylabel">
+        {{ contact.UserName }}
+        <ion-label class="online"><span class="indicator online"></span>
+          Online</ion-label>
+      </ion-label>
+    </ion-item>
+  </ion-list>
