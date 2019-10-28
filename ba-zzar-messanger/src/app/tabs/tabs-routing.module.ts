@@ -16,9 +16,19 @@ const routes: Routes = [
               import('../Contacts/contacts.module').then(m => m.ContactsPageModule)
           },
           {
+            path: 'new',
+            loadChildren: () =>
+              import('../Contacts/contacts-new/contacts-new.module').then(m => m.ContactsNewPageModule)
+          },
+          {
             path: ':Id',
             loadChildren: () =>
               import('../Contacts/contacts-details/contacts-details.module').then(m => m.ContactsDetailsPageModule)
+          },
+          {
+            path: 'edit/:Id',
+            loadChildren: () =>
+              import('../Contacts/contacts-edit/contacts-edit.module').then(m => m.ContactsEditPageModule)
           },
         ]
       },
@@ -29,6 +39,11 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../Dialogues/dialogues.module').then(m => m.DialoguesPageModule)
+          },
+          {
+            path: ':Id',
+            loadChildren: () =>
+              import('../Dialogues/chat/chat.module').then(m => m.ChatPageModule)
           }
         ]
       },

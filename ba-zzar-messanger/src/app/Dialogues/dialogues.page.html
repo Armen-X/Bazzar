@@ -1,9 +1,23 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Dialogues
-    </ion-title>
+<ion-header translucent="true" >
+  <ion-toolbar class="Top">     
+      <ion-input class="SearchTop" placeholder="Search dialogue...">
+       
+      </ion-input>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+
+<ion-content class="background">
+  <ion-list class="list">
+    <ion-item    class="itemlist"  ion-item detail-none *ngFor="let dialogues of dialogues"
+              [routerLink]="['./', dialogues.Id] " >
+      <ion-avatar class="contactpics" slot="start">
+        <ion-img [src]="dialogues.ImageUrl"></ion-img>
+      </ion-avatar>
+      <ion-label class="mylabel">
+        {{ dialogues.UserName }} <span class="indicator online"></span>
+        <ion-label class="online">
+          This Was a Great Idea</ion-label>
+      </ion-label>
+    </ion-item>
+  </ion-list>
