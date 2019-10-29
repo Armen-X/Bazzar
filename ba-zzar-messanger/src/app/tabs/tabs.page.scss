@@ -1,1 +1,24 @@
 
+ion-tabs{ 
+    background:  rgb(21, 24, 33);
+    --background:   rgb(21, 24, 33);
+
+}
+ion-tab-bar{
+    height: 65px;
+    border-top: rgb(29, 169, 251) solid 1px;
+    --background:   rgb(21, 24, 33);
+
+}
+
+ion-tab-button{
+    background:  rgb(21, 24, 33);
+    color:  rgb(89, 96, 118);
+    --color-selected: rgb(255, 255, 255);
+}
+
+.tab-selected{
+    background: rgb(21,24,33) !important;
+    color: ghostwhite !important;
+    border-bottom: rgb(29, 169, 251) solid 4px;
+  }

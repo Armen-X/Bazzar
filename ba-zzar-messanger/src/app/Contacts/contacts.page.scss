@@ -1,11 +1,11 @@
 ion-content.background{
-    --background:  rgb(39, 50, 77);
+    --background:  rgb(21, 24, 33);
 }
 ion-content{
-    background-color:  rgb(37, 48, 74);
+    background-color:  rgb(21, 24, 33);
 }
 ion-content.tabs{
-    --background:  rgb(39, 50, 77);
+    --background:  rgb(21, 24, 33);
 }
 
 ion-header{
@@ -15,42 +15,34 @@ ion-footer{
     height: 60px;
 }
 app-contact.ion-page{
-    --background:  rgb(39, 50, 77);
+    --background:  rgb(21, 24, 33);
 
-}
-ion-toolbar.Top{
-    background-color:  rgb(37, 48, 74);
 }
 
 
 ion-toolbar.Top{
     height: 83px;
     margin-bottom: -4px;
-    --background:url('../../assets/Header.svg') 0 0/100% 104% no-repeat;
-    background: #25304a;
+    --background:rgb(21, 24, 33);
+    background: rgb(21, 24, 33);
+    background-color:  rgb(21, 24, 33);
+    border-bottom: rgb(29, 169, 251) solid 1px;
+
 
 }
+
+
 ion-input.SearchTop{
+    color:   rgb(163, 170, 202);
     font-size: 21px;
-    color:  #8ca4e8;
+   font-weight: 100;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-top: 30px;
     margin-left: 100px;
 }
 
-ion-toolbar.footer{
-    background-color:  rgb(37, 48, 74);
-}
 
-ion-toolbar.footer{
-    height: 83px;
-    --background:url('../../assets/contactfooter.svg') 0 0/100% 104% no-repeat;
-    margin-top: -18px;
-}
 
-.header-translucent-ios ion-toolbar{
-    --opacity:3.8;
-}
 
 ion-img{
     margin-top: -8px;
@@ -73,7 +65,7 @@ ion-label.mylabel{
 }
 
 ion-item{
-    --ion-background-color: rgb(39, 50, 77);
+    --ion-background-color: rgb(21, 24, 33);
     margin-top: -5px;
     margin-bottom: -10px;
 }
@@ -81,7 +73,7 @@ ion-item{
 .item.sc-ion-label-ios-h, .item .sc-ion-label-ios-,.online{
     --color: salmon;
     display: block;
-    color: #7589c4;
+    color: rgb(89, 96, 118);
     font-family: var(--ion-font-family,inherit);
     font-size: 15px;
     text-overflow: ellipsis;
@@ -93,7 +85,7 @@ ion-item{
 }
 
 .indicator.online {
-    background: #10dc60;
+    background: rgb(29, 169, 251);
     display: inline-block;
     width: 10px;
     height: 10px;
@@ -112,5 +104,6 @@ ion-item{
 
 
 ion-fab-button.Add{
-    --background: #187182;
+    --background: rgb(29, 169, 251);
+
 }

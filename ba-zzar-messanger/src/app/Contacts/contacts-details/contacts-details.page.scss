@@ -1,3 +1,38 @@
 ion-content.body{
-    --background:  rgb(39, 50, 77);
+    --background:   rgb(21, 24, 33);
 }
+ion-toolbar{
+    --background:   rgb(21, 24, 33);
+}
+
+ion-content{
+    --background:   rgb(21, 24, 33);
+
+}
+
+ion-title{
+    color: ghostwhite;
+    font-size: 21px;
+    font-weight: 100;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ion-content.background{
+    --background:  rgb(21, 24, 33);
+}
+ion-content{
+    background-color:  rgb(21, 24, 33);
+}
+
+ion-grid{
+    margin: -4px;
+}
+ion-list{
+    margin-top: -19px;
+
+}
+h1{
+    margin-left: -50px;
+    margin-top: 10px;
+}
+

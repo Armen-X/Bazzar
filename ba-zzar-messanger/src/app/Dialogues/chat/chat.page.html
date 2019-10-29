@@ -6,7 +6,10 @@
           </ion-avatar>
               <ion-text> {{loadedContact.FirstName }} {{ loadedContact.LastName}} <span  class="indicator online"></span> </ion-text>
               <label class="typing">typing...</label>
-              <ion-icon class="topiconright" slot="end" name="menu" ></ion-icon>
+              <ion-menu-button slot="end">
+                  <ion-icon class="topiconright" slot="end" name="menu" ></ion-icon>
+              </ion-menu-button>
+             
             
       </ion-item>
   </ion-toolbar>
@@ -15,3 +18,13 @@
 <ion-content class="body">
 
 </ion-content>
+
+<ion-footer class="bottom">
+  <ion-toolbar class="tlbottom">
+    <ion-icon class="mic" slot="start" name="mic"></ion-icon>
+
+    <ion-icon class="addicon" slot="start"  name="add"></ion-icon>
+
+    <ion-icon class="send" slot="end" name="send"></ion-icon>
+  </ion-toolbar>
+</ion-footer>

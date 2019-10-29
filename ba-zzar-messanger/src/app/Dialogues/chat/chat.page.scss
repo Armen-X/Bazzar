@@ -1,27 +1,66 @@
 ion-toolbar.Top {
-    background-color:  rgb(37, 48, 74);
+    background-color:  rgb(21, 24, 33);
 }
 
 ion-toolbar.Top {
     height: 85px;
     margin-bottom: -4px;
-    --background:url('../../../assets/Header.svg') 0 0/100% 104% no-repeat;
-    background: #25304a;
+    --background:(21, 24, 33);
+    background: rgb(21, 24, 33);
+    border-bottom:  rgb(29, 169, 251)  solid 1px;
+}
 
+ion-footer{
+    height: 115px;
+}
+
+ion-footer.bottom{
+    height: 115px;
+    border-top: solid 0.6px rgb(29, 169, 251);
+    background: rgb(21, 24, 33);
+    
 }
 
 ion-content.body{
-    --ion-background-color: rgb(39, 50, 77);
+    --ion-background-color: rgb(21, 24, 33);
 }
 ion-item {
     padding-top: 24px;
-    --ion-background-color: rgb(39, 50, 77);
+    --ion-background-color: rgb(21, 24, 33);
     margin-top: -5px;
     margin-bottom: -10px;
 }
 
-ion-icon.topiconright{
-    color: #00fdfd;
+
+ion-menu-button{
+    color: rgb(29, 169, 251)
+}
+
+ion-icon.mic{
+font-size: 33px;  
+
+}
+ion-icon.addicon{
+
+}
+ion-icon.send{
+
+}
+
+div.toolbar-container{
+    height: 100px;
+}
+
+
+ion-toolbar.tlbottom{
+    border-top:  rgb(29, 169, 251) solid 1px; 
+    --background: rgb(21, 24, 33);
+    height: 114px;
+}
+ion-icon{
+    font-weight: 100;
+    font-size: 50px;
+    color: rgb(29, 169, 251)
 }
 
 ion-text {
@@ -42,7 +81,7 @@ ion-avatar {
 }
 
 label.typing{
-    color: #00fdfd;
+    color: rgb(29, 169, 251);
     font-family: inherit;
     position: absolute;
     margin-top: 12px;
@@ -54,7 +93,7 @@ span.indicator.online{
     margin-top: -26px;
 }
 .indicator.online {
-    background: #10dc60;
+    background: rgb(29, 169, 251);
     display: inline-block;
     width: 10px;
     height: 10px;

@@ -1,1 +1,19 @@
 
+ion-toolbar.Top{
+    height: 83px;
+    margin-bottom: -4px;
+    --background:rgb(21, 24, 33);
+    background: rgb(21, 24, 33);
+    background-color:  rgb(21, 24, 33);
+    border-bottom: rgb(29, 169, 251) solid 1px;
+
+
+}
+
+ion-title{
+    color: ghostwhite;
+}
+
+ion-content{
+    --background:  rgb(21, 24, 33);
+}
