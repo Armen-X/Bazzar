@@ -10,66 +10,6 @@ ion-toolbar.Top {
     border-bottom:  rgb(29, 169, 251)  solid 1px;
 }
 
-ion-footer{
-    height: 115px;
-}
-
-ion-footer.bottom{
-    height: 115px;
-    border-top: solid 0.6px rgb(29, 169, 251);
-    background: rgb(21, 24, 33);
-    
-}
-
-ion-content.body{
-    --ion-background-color: rgb(21, 24, 33);
-}
-ion-item {
-    padding-top: 24px;
-    --ion-background-color: rgb(21, 24, 33);
-    margin-top: -5px;
-    margin-bottom: -10px;
-}
-
-
-ion-menu-button{
-    color: rgb(29, 169, 251)
-}
-
-ion-icon.mic{
-font-size: 33px;  
-
-}
-ion-icon.addicon{
-
-}
-ion-icon.send{
-
-}
-
-div.toolbar-container{
-    height: 100px;
-}
-
-
-ion-toolbar.tlbottom{
-    border-top:  rgb(29, 169, 251) solid 1px; 
-    --background: rgb(21, 24, 33);
-    height: 114px;
-}
-ion-icon{
-    font-weight: 100;
-    font-size: 50px;
-    color: rgb(29, 169, 251)
-}
-
-ion-text {
-    margin-top: -25px;
-    margin-left: 5px;
-    font-size: 20px;
-    color: ghostwhite;
-}
-
 ion-img{
     margin-top: -20px;
     height: 50px;
@@ -109,3 +49,62 @@ span.indicator.online{
     75% { -webkit-transform: scale(1); }
     100% { -webkit-transform: scale(1); }
 }
+
+ion-menu-button{
+    color: rgb(29, 169, 251)
+}
+ion-content.body{
+    --ion-background-color: rgb(21, 24, 33);
+}
+ion-item {
+    padding-top: 24px;
+    --ion-background-color: rgb(21, 24, 33);
+    margin-top: -5px;
+    margin-bottom: -10px;
+}
+
+
+ion-footer{
+    height: 115px;
+}
+
+ion-footer.bottom{
+    height: 115px;
+    border-top: solid 0.6px rgb(29, 169, 251);
+    background: rgb(21, 24, 33);
+    
+}
+
+ion-icon.mic{
+font-size: 33px;  
+
+}
+
+div.toolbar-container{
+    height: 100px;
+}
+
+ion-toolbar.tlbottom{
+    border-top:  rgb(29, 169, 251) solid 1px; 
+    --background: rgb(21, 24, 33);
+    height: 114px;
+}
+
+ion-icon{
+    font-weight: 100;
+    font-size: 50px;
+    color: rgb(29, 169, 251)
+}
+
+ion-text {
+    margin-top: -25px;
+    margin-left: 5px;
+    font-size: 20px;
+    color: ghostwhite;
+}
+
+ion-input{
+    color: ghostwhite
+}
+
+
