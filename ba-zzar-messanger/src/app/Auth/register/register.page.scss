@@ -1,0 +1,89 @@
+ion-content {
+    --background: linear-gradient(180deg, rgba(20,20,20) 0%, rgba(20,20,20) 4.5%, rgba(5,55,90) 50.33%, rgba(8,74,122) 83%) !important;
+}
+
+ion-button{
+    --background: rgb(48, 108, 149);
+    height: 52px;
+    width: 216px;
+    margin-top: 35px;
+    
+}
+ion-img{
+    width: 233px;
+    height: 191px;
+    margin-bottom: 65px;
+
+}
+
+ion-input{
+    margin-left: -8px;
+    color: ghostwhite;
+    
+}
+
+ion-input.inputUserName{
+    margin-top: -1px;
+    margin-left: 0px;
+}
+
+ion-input.inputemail{
+    margin-top: 0px;
+    margin-left: 0px;
+
+}
+ion-input.inputpassword{
+    margin-top: 0px;
+    margin-left: 0px;
+
+}
+
+
+
+ion-label{
+    font-size: 10px;
+    color: ghostwhite;
+}
+ion-label.labelUsername{
+    margin-top: -12px;
+}
+ion-label.labelemail{
+    margin-top: 30px;
+}
+
+ion-label.labelPassword{
+    margin-top: 113px;
+}
+div{
+    margin-top: 12px;
+}
+
+ion-label.LoginInLabel{
+    margin-left: 35px;
+    
+}
+a{
+    color: ghostwhite;
+    font-size: 10px;
+}
+.hr1 {
+    border-bottom: 1px solid #ccc;
+    margin: 10px 0;
+    width: 220px;
+    margin-bottom: 5px;
+    margin-top: 0px;
+  }
+  .hr2 {
+    border-bottom: 1px solid #ccc;
+    margin: 10px 0;
+    width: 220px;
+    margin-bottom: 5px;
+    margin-top: 0px;
+  }
+  .hr3 {
+    border-bottom: 1px solid #ccc;
+    margin: 10px 0;
+    width: 220px;
+    margin-bottom: 5px;
+    margin-top: 0px;
+  }

@@ -1,0 +1,42 @@
+<ion-content style="margin: auto;" >
+  <form #f="ngForm" (ngSubmit)="onFormSubmit(f.value)">
+    <ion-grid>
+        <ion-row>
+          <ion-col size="2" >
+            <div></div>
+          </ion-col>
+          <ion-col size="8"  >
+            <div >
+                <ion-img src="../../assets/logobazzar.png"></ion-img>
+                <ion-label class="labelemail">Email</ion-label>
+                <ion-input 
+                ngModel
+                name="email"
+                required
+                class="inputemail" 
+                type="email">
+              </ion-input>
+                <div class="hr1"> </div>
+                <ion-label class="labelPassword">Password</ion-label>
+                <ion-input 
+                ngModel
+                required
+                minLength="8"
+                name="password"
+                class="inputpassword"
+                type="password">
+              </ion-input>
+                <div class="hr2"> </div>
+                <ion-button type="submit"  class="loginbtn">Login</ion-button>
+                <div>
+                    <ion-label class="SingUpLabel">Dont't have an account? <a [routerLink]="['/register']">Sign Up</a></ion-label>
+                </div>
+            </div>
+          </ion-col>
+              <ion-col size="2" >
+                <div></div>
+              </ion-col>
+        </ion-row>
+      </ion-grid>
+</form>
+</ion-content>

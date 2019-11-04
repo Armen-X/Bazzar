@@ -1,0 +1,36 @@
+ion-toolbar.Top{
+    height: 83px;
+    --background:rgb(21, 24, 33);
+    background: rgb(21, 24, 33);
+    background-color:  rgb(21, 24, 33);
+    border-bottom: rgb(29, 169, 251) solid 1px;
+
+}
+
+ion-toolbar.body{
+    text-align: center;
+  
+
+}
+ion-icon.AddIcon{
+    background-image: url('/assets/contactadd.svg');
+}
+
+ion-title.Top{
+    margin-top:22px;
+    color:ghostwhite;
+}
+
+img.img{
+    margin-top: 60px;
+    height: 150px;
+    width: 150px;
+}
+ion-button{
+    margin-top: 60px;
+
+}
+
+ion-input{
+padding-top: 30px;
+}

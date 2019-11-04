@@ -1,0 +1,65 @@
+
+ion-content {
+       --background: linear-gradient(180deg, rgba(20,20,20) 0%, rgba(20,20,20) 4.5%, rgba(5,55,90) 50.33%, rgba(8,74,122) 83%) !important;
+}
+
+ion-button{
+    --background: rgb(48, 108, 149);
+    height: 52px;
+    width: 216px;
+    margin-top: -77px;
+    margin-bottom: 25px;
+
+}
+
+ion-label{
+    font-size: 10px;
+    color: ghostwhite;
+}
+ion-label.labelPassword{
+    margin-top: 19px;
+}
+ion-label.SingUpLabel{
+    margin-top: 132px;
+    margin-left: 32px;
+}
+
+ion-input{
+    color:ghostwhite
+}
+
+ion-input.inputemail{
+    margin-top: 0px;
+}
+ion-input.inputpassword{
+    font-size: 26px;
+    margin-top: 0px;
+}
+
+
+a{
+    color:ghostwhite;
+}
+ion-img{
+    width: 233px;
+    height: 191px;
+    margin-bottom: 65px;
+    margin-top: 5px;
+    margin-left: 0px;
+}
+
+.hr1 {
+    border-bottom: 1px solid #ccc;
+    margin: 10px 0;
+    width: 220px;
+    margin-bottom: 5px;
+    margin-top: 0px;
+  }
+  .hr2 {
+    border-bottom: 1px solid #ccc;
+    margin: 10px 0;
+    width: 222px;
+    margin-top: -7px;
+    margin-bottom: 120px;
+
+  }

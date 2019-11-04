@@ -1,0 +1,52 @@
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="onFormSubmit(f.value)">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="2" >
+        <div></div>
+      </ion-col>
+      <ion-col size="8"  >
+        <div >
+          <ion-img src="../../assets/logobazzar.png"></ion-img>
+          <ion-label class="labelUsername">UserName</ion-label>
+          <ion-input 
+          ngModel
+          required 
+          name="username" 
+          class="inputUserName" 
+          type="Text">
+        </ion-input>
+          <div class="hr1"> </div>
+    
+          <ion-label class="labelemail">Email</ion-label>
+          <ion-input
+           ngModel
+           required 
+           name="email"
+           class="inputemail" 
+           type="email">
+          </ion-input>
+          <div class="hr2"> </div>
+      
+          <ion-label class="labelPassword">Password</ion-label>
+          <ion-input
+           ngModel 
+           name="password"
+           minLength="8"
+           class="inputpassword" 
+           type="text">
+          </ion-input>
+          <div class="hr3"> </div>    
+        <ion-button type="submit" class="registerbtn">Register</ion-button>
+        <div>
+          <ion-label class="LoginInLabel">have already an account? <a [routerLink]="['/login']">Login</a></ion-label>
+        </div>
+      </div>
+      </ion-col>
+          <ion-col size="2" >
+            <div></div>
+          </ion-col>
+    </ion-row>
+  </ion-grid>
+</form>
+</ion-content>
