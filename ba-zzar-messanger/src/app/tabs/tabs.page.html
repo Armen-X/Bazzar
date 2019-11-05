@@ -3,11 +3,13 @@
   <ion-tab-bar  slot="bottom">
     <ion-tab-button tab="contacts">
       <ion-icon name="contacts"></ion-icon>
+      <ion-badge color="danger" *ngIf="crequest">1</ion-badge>
       <ion-label>Contacts</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="dialogues">
       <ion-icon name="chatboxes"></ion-icon>
+      <ion-badge color="danger" *ngIf="mdialogue">1</ion-badge>
       <ion-label>Dialogues</ion-label>
     </ion-tab-button>
 

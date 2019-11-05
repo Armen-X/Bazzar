@@ -14,7 +14,9 @@
           required 
           name="username" 
           class="inputUserName" 
-          type="Text">
+          type="Text"
+          #Username="ngModel">
+          <p *ngIf="!Username.valid && Username.touched">Username is required</p>
         </ion-input>
           <div class="hr1"> </div>
     
@@ -24,20 +26,26 @@
            required 
            name="email"
            class="inputemail" 
-           type="email">
+           type="email"
+           #email="ngModel">
+           <p *ngIf="!email.valid && email.touched">Email is required</p>
           </ion-input>
           <div class="hr2"> </div>
       
           <ion-label class="labelPassword">Password</ion-label>
           <ion-input
            ngModel 
+           required
            name="password"
-           minLength="8"
            class="inputpassword" 
-           type="text">
+           type="text"
+           #password="ngModel">
+           <p *ngIf="!password.valid && password.touched">Password is required</p>
           </ion-input>
+        
+          
           <div class="hr3"> </div>    
-        <ion-button type="submit" class="registerbtn">Register</ion-button>
+        <ion-button type="submit" [disabled]="!password.valid || !email.valid || !Username.valid"   class="registerbtn" >Register</ion-button>
         <div>
           <ion-label class="LoginInLabel">have already an account? <a [routerLink]="['/login']">Login</a></ion-label>
         </div>

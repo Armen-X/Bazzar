@@ -6,7 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
-
+  crequest = true;
+  mdialogue = true;
+  
   constructor() {}
 
 }

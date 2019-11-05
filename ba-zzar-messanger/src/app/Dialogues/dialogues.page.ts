@@ -9,6 +9,7 @@ import { Contact } from '../Models/contact.model';
 })
 export class DialoguesPage {
   dialogues: Contact[];
+  newmsg = true;
   constructor(private contact: ContactsService) { }
 
 
