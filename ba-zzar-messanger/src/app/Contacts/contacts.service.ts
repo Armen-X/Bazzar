@@ -1,10 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Contact } from './../Models/contact.model';
+import { HttpClient } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
+import { User } from '../Models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactsService {
+  apiUrl = 'https://localhost:44317/api/contacts/';
+
   private contacts: Contact[] = [
     {
       Id: 1,
@@ -42,8 +48,15 @@ export class ContactsService {
 
 
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
+  SearchContact(searchstring: string) {
+    return this.http.get<User[]>(this.apiUrl + 'GetContactsBySearch/' +  searchstring)
+      .pipe(
+        tap(_ => this.log('Search Contacts')),
+        catchError(this.handleError('Search', []))
+    );
+  }
 
   getAllContacts() {
     return [...this.contacts];
@@ -60,6 +73,26 @@ export class ContactsService {
     return contact.Id !== Id;
   });
   }
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+
+      // TODO: better job of transforming error for user consumption
+      this.log(`${operation} failed: ${error.message}`);
+
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
+
+  /** Log a HeroService message with the MessageService */
+  private log(message: string) {
+    console.log(message);
+  }
+
 }
 
 

@@ -7,7 +7,14 @@
 <ion-content>
   <ion-toolbar class="body">
     <img class="img" src="../../assets/contactadd.svg" />
-    <ion-input Placeholder="Add Contact Email"></ion-input>
-    <ion-button >Send Request</ion-button>
+    <form #f="ngForm" (ngSubmit)="SearchContact(f.value)"> 
+      <ion-searchbar type="text" debounce="1000" ngModel #search="ngModel" name="search" placholder="Add Contact Email" (ionChange)="SearchContact(f.value)"></ion-searchbar>
+      <ion-list>
+        <ion-item *ngFor="let item of items">
+          {{ item.email }}<ion-checkbox slot="end"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+    <ion-button (click)="AddRequest()">Send Request</ion-button>
+  </form>
   </ion-toolbar>  
 </ion-content>
