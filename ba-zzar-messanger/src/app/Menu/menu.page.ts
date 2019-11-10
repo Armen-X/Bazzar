@@ -14,5 +14,9 @@ export class MenuPage implements OnInit {
   ngOnInit() {
     this.User.CurrentUser.subscribe(User => this.appUser = User);
   }
+
+  Logout() {
+    this.auth.logout();
+  }
 }
 

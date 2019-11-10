@@ -32,13 +32,13 @@ items: any[];
    });
   }
 
-  AddRequest(data: any) {
+   /* AddRequest(data: any) {
     this.comtactservice.AddRequest(data)
    .subscribe(res => {
      console.log(res);
    }, (err) => {
      console.log(err);
    });
-}
+}*/
 
 }

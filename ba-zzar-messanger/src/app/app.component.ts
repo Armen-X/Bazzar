@@ -4,6 +4,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { UserService } from './user.service';
+import { AuthService } from './Auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ export class AppComponent implements OnInit {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private User: UserService,
+    private auth: AuthService
   ) {
     this.initializeApp();
   }
@@ -32,4 +34,9 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.User.CurrentUser.subscribe(User => this.appUser = User);
   }
+
+  Logout() {
+    this.auth.logout();
+  }
+
 }

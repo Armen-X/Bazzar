@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 
 @Injectable({
@@ -10,7 +12,7 @@ import { catchError, tap } from 'rxjs/operators';
 export class AuthService {
   apiUrl = 'https://localhost:44317/api/auth/';
 
-  constructor( private http: HttpClient, ) { }
+  constructor( private http: HttpClient, private router: Router) { }
 
 
   login(data: any): Observable<any> {
@@ -29,6 +31,10 @@ export class AuthService {
       );
   }
 
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
+  }
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

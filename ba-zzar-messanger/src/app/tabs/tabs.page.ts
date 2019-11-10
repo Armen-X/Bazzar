@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class TabsPage {
   crequest = true;
   mdialogue = true;
-  
+
   constructor() {}
 
 }

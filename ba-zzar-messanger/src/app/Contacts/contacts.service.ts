@@ -57,6 +57,14 @@ export class ContactsService {
         catchError(this.handleError('Search', []))
     );
   }
+  /*
+  AddRequest(email: string) {
+    return this.http.get<User[]>(this.apiUrl + 'AddRequest/' +  email)
+      .pipe(
+        tap(_ => this.log('Add Request')),
+        catchError(this.handleError('Request', []))
+    );
+  }*/
 
   getAllContacts() {
     return [...this.contacts];
