@@ -9,7 +9,7 @@ import { User } from '../Models/user';
   providedIn: 'root'
 })
 export class ContactsService {
-  apiUrl = 'https://localhost:44317/api/contacts/';
+  apiUrl = 'http://armenx-001-site1.atempurl.com/api/contacts/';
 
   private contacts: Contact[] = [
     {
