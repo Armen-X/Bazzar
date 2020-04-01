@@ -9,12 +9,13 @@
     <img class="img" src="../../assets/contactadd.svg" />
     <form #f="ngForm" (ngSubmit)="SearchContact(f.value)"> 
       <ion-searchbar type="text" debounce="1000" ngModel #search="ngModel" name="search" placholder="Add Contact Email" (ionChange)="SearchContact(f.value)"></ion-searchbar>
+    </form>
       <ion-list>
         <ion-item *ngFor="let item of items">
-          {{ item.email }}<ion-checkbox slot="end"></ion-checkbox>
+          {{ item.email }}<ion-checkbox slot="end" [(ngModel)]="item.isChecked" (click)="getChecked(item.id)" ></ion-checkbox>
         </ion-item>
       </ion-list>
-    <ion-button >Send Request</ion-button>
-  </form>
+    <ion-button (click)="AddRequest()" >Send Request</ion-button>
+  
   </ion-toolbar>  
 </ion-content>

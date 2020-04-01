@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tabs',
@@ -6,9 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
-  crequest = true;
+  crequest = false;
   mdialogue = true;
+  friendReqCount;
 
   constructor() {}
 
+  ionViewDidEnter() {
+    this.ReqChecker();
+  }
+
+  ReqChecker() {
+    this.friendReqCount = localStorage.getItem('friendreqcount');
+    if (this.friendReqCount > 0) {
+        this.crequest = true;
+    } else {
+      this.crequest = false;
+    }
+  }
 }

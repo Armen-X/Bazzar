@@ -10,7 +10,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  apiUrl = 'http://armenx-001-site1.atempurl.com/api/auth/';
+  //apiUrl = 'http://armenx-001-site1.atempurl.com/api/auth/';
+  apiUrl = 'http://localhost:44317/api/auth/';
+  //requesturl = 'http://armenx-001-site1.atempurl.com/api/contacts/GetRequestById/';
+  requesturl = 'http://localhost:44317/api/contacts/GetRequestById/';
 
   constructor( private http: HttpClient, private router: Router) { }
 
@@ -30,9 +33,18 @@ export class AuthService {
         catchError(this.handleError('login', []))
       );
   }
+  FriendRequestChecker(data: any) {
+    return this.http.get<any>(this.requesturl  + data )
+      .pipe(
+        tap(_ => this.log('friendrequestchecker')),
+        catchError(this.handleError('friendrequestchecker', []))
+    );
+  }
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('myid');
+    localStorage.removeItem('friendreqcount');
     this.router.navigate(['/login']);
   }
 

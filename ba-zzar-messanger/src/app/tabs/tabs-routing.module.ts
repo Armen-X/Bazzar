@@ -16,6 +16,11 @@ const routes: Routes = [
               import('../Contacts/contacts.module').then(m => m.ContactsPageModule)
           },
           {
+            path: 'request',
+            loadChildren: () =>
+              import('../Contacts/request/request.module').then(m => m.RequestPageModule)
+          },
+          {
             path: 'new',
             loadChildren: () =>
               import('../Contacts/contacts-new/contacts-new.module').then(m => m.ContactsNewPageModule)

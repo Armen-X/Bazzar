@@ -12,15 +12,23 @@ import { Router } from '@angular/router';
 })
 export class ContactsPage implements OnInit {
   contacts: Contact[];
-  constructor(private contact: ContactsService, private route: Router ) { }
+  friendReqCount;
+  request = false;
+  constructor(private contact: ContactsService, private route: Router ) {}
 
-
- ngOnInit() {
-
- }
+ ngOnInit() {}
 
  ionViewWillEnter() {
+  this.ReqChecker();
   this.contacts = this.contact.getAllContacts();
+}
+ReqChecker() {
+  this.friendReqCount = localStorage.getItem('friendreqcount');
+  if (this.friendReqCount > 0) {
+      this.request = true;
+  } else {
+    this.request = false;
+  }
 }
 
 }

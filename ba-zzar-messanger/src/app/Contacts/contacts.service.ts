@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Contact } from './../Models/contact.model';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, of, from } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { User } from '../Models/user';
 
@@ -9,8 +9,8 @@ import { User } from '../Models/user';
   providedIn: 'root'
 })
 export class ContactsService {
-  apiUrl = 'http://armenx-001-site1.atempurl.com/api/contacts/';
-
+  //apiUrl = 'http://armenx-001-site1.atempurl.com/api/contacts/';
+    apiUrl = 'http://localhost:44317/api/contacts/';
   private contacts: Contact[] = [
     {
       Id: 1,
@@ -57,14 +57,18 @@ export class ContactsService {
         catchError(this.handleError('Search', []))
     );
   }
-  /*
-  AddRequest(email: string) {
-    return this.http.get<User[]>(this.apiUrl + 'AddRequest/' +  email)
+
+  AddRequest(RquesterId , ContactId) {
+    return this.http.post<any[]>(this.apiUrl + 'AddRequest/',
+    {
+        MyContactId: ContactId,
+        RequesterId: RquesterId
+    })
       .pipe(
         tap(_ => this.log('Add Request')),
         catchError(this.handleError('Request', []))
     );
-  }*/
+  }
 
   getAllContacts() {
     return [...this.contacts];

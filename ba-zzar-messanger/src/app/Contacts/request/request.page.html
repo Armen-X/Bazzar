@@ -1,13 +1,11 @@
 <ion-header no-border translucent="true" >
   <ion-toolbar no-background class="Top">     
-      <ion-input class="SearchTop" placeholder="Search contact...">
-       
-      </ion-input>
+    <ion-title text-center><h1> Friend Requests </h1></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-item *ngIf="request" color="primary">
-  <ion-label [routerLink]="['/tabs/contacts/request/']"> {{ friendReqCount }} New Request</ion-label>
+  <ion-label [routerLink]="['/tabs/contacts/new/']"> New Request</ion-label>
 </ion-item>
 
 <ion-content class="background">
@@ -18,15 +16,11 @@
         <ion-img [src]="contact.ImageUrl"></ion-img>
       </ion-avatar>
       <ion-label class="mylabel">
-        {{ contact.UserName }}
+       
         <ion-label class="online"><span class="indicator online"></span>
           Online</ion-label>
       </ion-label>
     </ion-item>
   </ion-list>
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button class="Add" [routerLink]="['/tabs/contacts/new/']"  > 
-        <ion-icon name="add"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
+ 

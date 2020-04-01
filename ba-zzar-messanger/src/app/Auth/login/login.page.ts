@@ -28,11 +28,25 @@ user;
         console.log(this.user);
         if (res.token) {
           localStorage.setItem('token', res.token);
+          localStorage.setItem('myid', res.isAdmin.userId);
+          this.FriendRequestChecker();
           this.router.navigate(['/tabs/contacts/']);
         }
       }, (err) => {
         console.log(err);
       });
+  }
+  //Here we are checking how many friend request we got for tabs Contacts red icon
+  FriendRequestChecker() {
+    const myid = localStorage.getItem('myid');
+    this.auth.FriendRequestChecker(myid)
+   .subscribe(res => {
+     var count =  JSON.parse(res).length;
+     localStorage.setItem('friendreqcount', count.toString());
+     console.log(res);
+   }, (err) => {
+     console.log(err);
+   });
   }
 
   UserDisplayToNav(user) {

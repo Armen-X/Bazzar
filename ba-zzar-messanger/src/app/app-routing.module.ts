@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'login', loadChildren: './Auth/login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './Auth/register/register.module#RegisterPageModule' },
   { path: 'video-chat', loadChildren: './video-chat/video-chat.module#VideoChatPageModule' },
+  { path: 'request', loadChildren: './Contacts/request/request.module#RequestPageModule' },
 
 ];
 @NgModule({

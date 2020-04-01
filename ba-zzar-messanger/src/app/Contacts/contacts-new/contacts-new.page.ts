@@ -11,8 +11,11 @@ export class ContactsNewPage implements OnInit {
 SearchRes: any;
 SearchText: string;
 items: any[];
+SelectedContact: string;
+RequesterId: any = localStorage.getItem('myid');
 
-  constructor(private comtactservice: ContactsService) {   }
+
+  constructor(private contactservice: ContactsService) {   }
 
   ngOnInit() {
   }
@@ -22,7 +25,7 @@ items: any[];
   }
 
   SearchContact(data: any) {
-    this.comtactservice.SearchContact(data.search)
+    this.contactservice.SearchContact(data.search)
    .subscribe(res => {
      this.SearchRes = res;
      this.items = res;
@@ -32,13 +35,22 @@ items: any[];
    });
   }
 
-   /* AddRequest(data: any) {
-    this.comtactservice.AddRequest(data)
+
+    AddRequest(requesterid: any , contactid: any) {
+    requesterid =  this.RequesterId;
+    contactid = this.SelectedContact;
+    console.log(contactid);
+    this.contactservice.AddRequest(requesterid, contactid)
    .subscribe(res => {
      console.log(res);
    }, (err) => {
      console.log(err);
    });
-}*/
+  }
+
+  getChecked(ContactId) {
+    this.SelectedContact = ContactId;
+    console.log(this.SelectedContact);
+  }
 
 }
