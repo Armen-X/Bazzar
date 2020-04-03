@@ -4,23 +4,22 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-item *ngIf="request" color="primary">
-  <ion-label [routerLink]="['/tabs/contacts/new/']"> New Request</ion-label>
-</ion-item>
-
 <ion-content class="background">
   <ion-list class="list">
-    <ion-item    class="itemlist"  ion-item detail-none *ngFor="let contact of contacts"
-              [routerLink]="['./', contact.Id] " >
+    <ion-item    class="itemlist"  ion-item detail-none *ngFor="let item of friendrequesters" >
       <ion-avatar class="contactpics" slot="start">
-        <ion-img [src]="contact.ImageUrl"></ion-img>
+        <ion-img [src]="item.Requester.ImageUrl || defaultImg "></ion-img>
       </ion-avatar>
-      <ion-label class="mylabel">
-       
-        <ion-label class="online"><span class="indicator online"></span>
-          Online</ion-label>
+      <ion-label class="mylabel" >
+        {{ item.Requester.Email }}  
+        <ion-label>
+          <ion-button (click)="AcceptContact(item);" color="success">Accept</ion-button>
+          <ion-button  color="danger">Decline</ion-button>
+        </ion-label>
       </ion-label>
+     
     </ion-item>
   </ion-list>
+</ion-content>
 
  

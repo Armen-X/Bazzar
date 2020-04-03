@@ -11,17 +11,33 @@ import { Router } from '@angular/router';
   styleUrls: ['contacts.page.scss']
 })
 export class ContactsPage implements OnInit {
-  contacts: Contact[];
+ // contacts: Contact[];
+  contacts: any[] = [];
+  defaultImg = "https://www.sackettwaconia.com/wp-content/uploads/default-profile.png";
   friendReqCount;
   request = false;
   constructor(private contact: ContactsService, private route: Router ) {}
 
- ngOnInit() {}
+ ngOnInit() {
+  this.GetContactList();
+  this.ReqChecker();
+ }
 
  ionViewWillEnter() {
-  this.ReqChecker();
-  this.contacts = this.contact.getAllContacts();
+  //this.contacts = this.contact.getAllContacts();
 }
+
+GetContactList() {
+  const myid = localStorage.getItem('myid');
+  this.contact.GetContactList(myid)
+ .subscribe(res => {
+  this.contacts = JSON.parse(res);
+  console.log(this.contacts);
+ }, (err) => {
+   console.log(err);
+ });
+}
+
 ReqChecker() {
   this.friendReqCount = localStorage.getItem('friendreqcount');
   if (this.friendReqCount > 0) {

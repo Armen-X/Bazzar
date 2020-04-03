@@ -11,42 +11,13 @@ import { User } from '../Models/user';
 export class ContactsService {
   //apiUrl = 'http://armenx-001-site1.atempurl.com/api/contacts/';
     apiUrl = 'http://localhost:44317/api/contacts/';
-  private contacts: Contact[] = [
-    {
-      Id: 1,
-      UserName: 'Felix',
-      FirstName: 'Felix',
-      LastName: 'Ohanyan',
-      Email: 'Feko@gmail.com',
-      ImageUrl: 'https://i.mycdn.me/i?r=AyH4iRPQ2q0otWIFepML2LxR215qLb6c53AX4bw1jzCrug',
-    },
-    {
-      Id: 2,
-      UserName: 'Chibur',
-      FirstName: 'Vahan',
-      LastName: 'Sahakyan',
-      Email: 'Sava@gmail.com',
-      ImageUrl: 'https://scontent-lax3-2.cdninstagram.com/vp/8b395529559e5f9dbab29bf07810dec5/5E27D8C1/t51.2885-15/sh0.08/e35/p750x750/64386743_1187871004732336_3845010825664198559_n.jpg?_nc_ht=scontent-lax3-2.cdninstagram.com&_nc_cat=104',
-    },
-    {
-      Id: 3,
-      UserName: 'Vladi',
-      FirstName: 'Vlad',
-      LastName: 'Petrovic',
-      Email: 'Vladi@gmail.com',
-      ImageUrl: 'https://i.mycdn.me/i?r=AyH4iRPQ2q0otWIFepML2LxR2tbgqwQ-SePMY3wIvSI8OA',
-    },
-    {
-      Id: 4,
-      UserName: 'Argishto',
-      FirstName: 'Argisht',
-      LastName: 'N',
-      Email: 'Argishti@gmail.com',
-      ImageUrl: 'https://i.mycdn.me/i?r=AyH4iRPQ2q0otWIFepML2LxRTsV6aT1-zft07UNhPAbo7w',
-    },
-  ];
 
+     //requesturl = 'http://armenx-001-site1.atempurl.com/api/contacts/GetRequestById/';
+  requesturl = 'http://localhost:44317/api/contacts/GetRequestById/';
 
+  private friendrequesters: Contact[];
+
+  
 
   constructor(private http: HttpClient) { }
 
@@ -58,7 +29,7 @@ export class ContactsService {
     );
   }
 
-  AddRequest(RquesterId , ContactId) {
+  AddRequest(ContactId , RquesterId  ) {
     return this.http.post<any[]>(this.apiUrl + 'AddRequest/',
     {
         MyContactId: ContactId,
@@ -70,20 +41,52 @@ export class ContactsService {
     );
   }
 
-  getAllContacts() {
-    return [...this.contacts];
+  FriendRequestChecker(data: any) {
+    return this.http.get<any>(this.requesturl  + data )
+      .pipe(
+        tap(_ => this.log('friendrequestchecker')),
+        catchError(this.handleError('friendrequestchecker', []))
+    );
   }
-  getContact(Id: number) {
-    return {
-      ...this.contacts.find(contact => {
-      return contact.Id === Id;
-    })};
+  getAllFrContacts() {
+    console.log(this.friendrequesters);
+    return [...this.friendrequesters];
+  }
+
+  //getAllContacts() {
+   // return [...this.contacts];
+ // }
+ GetContactList(data: any) {
+  return this.http.get<any>(this.apiUrl + '/GetContactListById/' + data )
+    .pipe(
+      tap(_ => this.log('GetContactList')),
+      catchError(this.handleError('GetContactList', []))
+  );
+}
+GetContactById(data: any) {
+  return this.http.get<any>(this.apiUrl + '/GetContactsById/' + data )
+    .pipe(
+      tap(_ => this.log('GetContact')),
+      catchError(this.handleError('GetContact', []))
+  );
+}
+
+  AcceptContact( MyId, FriendId) {
+    return this.http.post<any[]>(this.apiUrl + 'AcceptRequest/',
+    {
+        MyContactId: MyId,
+        ContactId: FriendId
+    })
+      .pipe(
+        tap(_ => this.log('Accept Contact')),
+        catchError(this.handleError('Accept', []))
+    );
   }
 
   deleteContact(Id: number) {
-  this.contacts = this.contacts.filter(contact => {
-    return contact.Id !== Id;
-  });
+  //this.contacts = this.contacts.filter(contact => {
+   // return contact.Id !== Id;
+ // });
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

@@ -15,7 +15,7 @@ export class DialoguesPage {
 
 
   ionViewWillEnter() {
-    this.dialogues = this.contact.getAllContacts();
+    //this.dialogues = this.contact.getAllContacts();
   }
 
 }

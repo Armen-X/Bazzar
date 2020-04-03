@@ -3,6 +3,7 @@ import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { UserService } from 'src/app/user.service';
+import { ContactsService } from 'src/app/Contacts/contacts.service';
 
 
 @Component({
@@ -15,7 +16,8 @@ user;
   constructor(
     private auth: AuthService,
     private router: Router,
-    private User: UserService ) { }
+    private User: UserService,
+    private Cont: ContactsService ) { }
 
   ngOnInit() {
   }
@@ -39,7 +41,7 @@ user;
   //Here we are checking how many friend request we got for tabs Contacts red icon
   FriendRequestChecker() {
     const myid = localStorage.getItem('myid');
-    this.auth.FriendRequestChecker(myid)
+    this.Cont.FriendRequestChecker(myid)
    .subscribe(res => {
      var count =  JSON.parse(res).length;
      localStorage.setItem('friendreqcount', count.toString());

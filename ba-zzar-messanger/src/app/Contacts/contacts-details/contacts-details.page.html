@@ -10,7 +10,7 @@
 <ion-content class="body">
   <ion-grid>
     <ion-row  >
-        <ion-img [src]="loadedContact.ImageUrl" ></ion-img>
+        <ion-img [src]="loadedContact.ImageUrl || defaultImg" ></ion-img>
     </ion-row>
         <ion-col>
           <ion-list>

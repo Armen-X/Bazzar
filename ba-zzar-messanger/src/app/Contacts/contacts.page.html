@@ -13,12 +13,12 @@
 <ion-content class="background">
   <ion-list class="list">
     <ion-item    class="itemlist"  ion-item detail-none *ngFor="let contact of contacts"
-              [routerLink]="['./', contact.Id] " >
+              [routerLink]="['./', contact.Contact.Id] " >
       <ion-avatar class="contactpics" slot="start">
-        <ion-img [src]="contact.ImageUrl"></ion-img>
+        <ion-img [src]="contact.Contact.ImageUrl || defaultImg "></ion-img>
       </ion-avatar>
       <ion-label class="mylabel">
-        {{ contact.UserName }}
+        {{ contact.Contact.UserName }}
         <ion-label class="online"><span class="indicator online"></span>
           Online</ion-label>
       </ion-label>

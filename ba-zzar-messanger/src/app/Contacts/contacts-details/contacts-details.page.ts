@@ -10,8 +10,10 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./contacts-details.page.scss'],
 })
 export class ContactsDetailsPage implements OnInit {
+  res;
+  loadedContact: any;
+  defaultImg = "https://www.sackettwaconia.com/wp-content/uploads/default-profile.png";
 
-  loadedContact: Contact;
   constructor(
     private activatedRoute: ActivatedRoute,
     private contactsService: ContactsService,
@@ -27,7 +29,14 @@ export class ContactsDetailsPage implements OnInit {
         return;
       }
       let contactId = paramMap.get('Id');
-      this.loadedContact = this.contactsService.getContact(parseInt(contactId));
+      this.loadedContact = this.contactsService.GetContactById(contactId)
+       .subscribe(res => {
+        this.loadedContact = JSON.parse(res);
+        console.log(this.loadedContact);
+       }, (err) => {
+         console.log(err);
+       });
+
     });
   }
 
