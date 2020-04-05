@@ -10,8 +10,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  //apiUrl = 'http://armenx-001-site1.atempurl.com/api/auth/';
-  apiUrl = 'http://localhost:44317/api/auth/';
+  apiUrl = 'http://armenx-001-site1.atempurl.com/api/auth/';
+ // apiUrl = 'http://localhost:44317/api/auth/';
  
 
   constructor( private http: HttpClient, private router: Router) { }

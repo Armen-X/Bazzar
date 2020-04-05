@@ -40,7 +40,7 @@ RequesterId: any = localStorage.getItem('myid');
     requesterid =  this.RequesterId;
     contactid = this.SelectedContact;
     console.log(contactid);
-    this.contactservice.AddRequest(requesterid, contactid)
+    this.contactservice.AddRequest(contactid , requesterid)
    .subscribe(res => {
      console.log(res);
    }, (err) => {

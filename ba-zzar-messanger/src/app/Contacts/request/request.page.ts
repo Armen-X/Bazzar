@@ -50,7 +50,15 @@ export class RequestPage implements OnInit {
 
     this.frcontact.AcceptContact(this.myId, this.friendId)
    .subscribe(res => {
-     console.log(res);
+     console.log(res); this.DeleteRequest();
+   }, (err) => {
+     console.log(err);
+   });
+  }
+
+  DeleteRequest() {
+    this.frcontact.DeleteRequest(this.friendId)
+   .subscribe(res => {
    }, (err) => {
      console.log(err);
    });

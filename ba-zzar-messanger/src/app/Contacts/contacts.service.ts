@@ -9,15 +9,13 @@ import { User } from '../Models/user';
   providedIn: 'root'
 })
 export class ContactsService {
-  //apiUrl = 'http://armenx-001-site1.atempurl.com/api/contacts/';
-    apiUrl = 'http://localhost:44317/api/contacts/';
+  apiUrl = 'http://armenx-001-site1.atempurl.com/api/contacts/';
+    //apiUrl = 'http://localhost:44317/api/contacts/';
 
-     //requesturl = 'http://armenx-001-site1.atempurl.com/api/contacts/GetRequestById/';
-  requesturl = 'http://localhost:44317/api/contacts/GetRequestById/';
+     requesturl = 'http://armenx-001-site1.atempurl.com/api/contacts/GetRequestById/';
+  //requesturl = 'http://localhost:44317/api/contacts/GetRequestById/';
 
   private friendrequesters: Contact[];
-
-  
 
   constructor(private http: HttpClient) { }
 
@@ -53,9 +51,9 @@ export class ContactsService {
     return [...this.friendrequesters];
   }
 
-  //getAllContacts() {
-   // return [...this.contacts];
- // }
+  //getAllContacts(){
+  // return [...this.contacts];
+  // }
  GetContactList(data: any) {
   return this.http.get<any>(this.apiUrl + '/GetContactListById/' + data )
     .pipe(
@@ -80,6 +78,16 @@ GetContactById(data: any) {
       .pipe(
         tap(_ => this.log('Accept Contact')),
         catchError(this.handleError('Accept', []))
+    );
+  }
+
+  DeleteRequest(data: any) {
+    console.log("delete method in");
+    console.log(data);
+    return this.http.delete(this.apiUrl + '/DeleteRequestById/' + data )
+      .pipe(
+        tap(_ => this.log('Delete RequestbyId')),
+        catchError(this.handleError('Delete RequestbyId', []))
     );
   }
 

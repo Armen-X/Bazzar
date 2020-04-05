@@ -10,7 +10,7 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./chat.page.scss'],
 })
 export class ChatPage implements OnInit {
-  loadedContact: Contact;
+  loadedContact: any;
   constructor(
     private activatedRoute: ActivatedRoute,
     private contactsService: ContactsService,
@@ -19,15 +19,6 @@ export class ChatPage implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.activatedRoute.paramMap.subscribe(paramMap => {
-      if (!paramMap.has('Id')) {
-        //redirect user 
-        this.router.navigate(['/contacts']);
-        return;
-      }
-      let contactId = paramMap.get('Id');
-      this.loadedContact = this.contactsService.getContact(parseInt(contactId));
-    });
   }
 
 }

@@ -10,14 +10,16 @@ export class TabsPage {
   mdialogue = true;
   friendReqCount;
 
-  constructor() {}
-
-  ionViewDidEnter() {
-    this.ReqChecker();
+  constructor() {
+    this.friendReqCount = localStorage.getItem('friendreqcount');
   }
 
+  ngOnInit() {
+    //this.friendReqCount = localStorage.getItem('friendreqcount');
+    this.ReqChecker();
+   }
+ 
   ReqChecker() {
-    this.friendReqCount = localStorage.getItem('friendreqcount');
     if (this.friendReqCount > 0) {
         this.crequest = true;
     } else {

@@ -11,11 +11,13 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './Auth/Interceptors/token.interceptor';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
+    CommonModule,
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
